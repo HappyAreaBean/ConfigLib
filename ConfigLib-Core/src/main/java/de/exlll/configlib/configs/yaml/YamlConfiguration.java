@@ -59,6 +59,7 @@ public abstract class YamlConfiguration extends Configuration<YamlConfiguration>
 
     public static class YamlProperties extends Properties {
         public static final YamlProperties DEFAULT = builder().build();
+        private final boolean isSpaceEachComments;
         private final List<String> prependedComments;
         private final List<String> appendedComments;
         private final BaseConstructor constructor;
@@ -68,6 +69,7 @@ public abstract class YamlConfiguration extends Configuration<YamlConfiguration>
 
         protected YamlProperties(Builder<?> builder) {
             super(builder);
+            this.isSpaceEachComments = builder.isSpaceEachComments;
             this.prependedComments = builder.prependedComments;
             this.appendedComments = builder.appendedComments;
             this.constructor = builder.constructor;
@@ -87,6 +89,10 @@ public abstract class YamlConfiguration extends Configuration<YamlConfiguration>
 
         public final List<String> getPrependedComments() {
             return prependedComments;
+        }
+
+        public final boolean isSpaceEachComments() {
+            return isSpaceEachComments;
         }
 
         public final List<String> getAppendedComments() {
@@ -111,6 +117,7 @@ public abstract class YamlConfiguration extends Configuration<YamlConfiguration>
 
         public static abstract class Builder<B extends Builder<B>>
                 extends Properties.Builder<B> {
+            private boolean isSpaceEachComments = true;
             private List<String> prependedComments = Collections.emptyList();
             private List<String> appendedComments = Collections.emptyList();
             private BaseConstructor constructor = new Constructor();
@@ -121,6 +128,18 @@ public abstract class YamlConfiguration extends Configuration<YamlConfiguration>
             protected Builder() {
                 options.setIndent(2);
                 options.setDefaultFlowStyle(FlowStyle.BLOCK);
+            }
+
+            /**
+             * Sets the comments prepended to a configuration.
+             *
+             * @param isSpaceEachComments List of comments that are prepended
+             * @return this {@code Builder}
+             * @throws NullPointerException if {@code isSpaceEachComments ist null}
+             */
+            public final B isSpaceEachComments(boolean isSpaceEachComments) {
+                this.isSpaceEachComments = Objects.requireNonNull(isSpaceEachComments);
+                return getThis();
             }
 
             /**

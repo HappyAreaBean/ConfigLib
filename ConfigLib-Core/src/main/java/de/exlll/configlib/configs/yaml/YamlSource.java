@@ -143,6 +143,7 @@ final class YamlSource implements ConfigurationSource<YamlConfiguration> {
                     String newDumpLine = dumpLine.replaceAll("^\\s+", "");
                     int count = dumpLine.length() - newDumpLine.length();
                     String[] valueSplit = entry.getValue().split("\n");
+                    if (props.isSpaceEachComments()) builder.append('\n'); // I spent like 2 hours to found this. IF IT HAVE COMMENT THEN ADD A SPACE TOP ON IT
                     for (String val : valueSplit) {
                         int updateCount = val.length() + count;
                         char fill = ' ';
