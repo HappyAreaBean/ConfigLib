@@ -13,6 +13,45 @@ storage systems.
 
 For a step-by-step tutorial see: [Tutorial](https://github.com/Exlll/ConfigLib/wiki/Tutorial)
 
+Gradle
+-
+
+```gradle
+    maven { 
+        url 'https://jitpack.io'
+    }
+```
+
+Adding the dependency:
+
+```gradle
+    dependencies {
+        implementation "com.github.HappyAreaBean.ConfigLib:configlib-core:2.3.0"
+    }
+```
+
+Maven
+-
+
+```xml
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+ ```
+
+Adding the dependency:
+
+```xml
+<dependency>
+    <groupId>com.github.HappyAreaBean.ConfigLib</groupId>
+    <artifactId>configlib-core</artifactId>
+    <version>2.3.0</version>
+</dependency>
+```
+
 ## Features
 * automatic creation, saving, loading and updating of configurations
     * (_YAML_) automatic creation of files and directories
