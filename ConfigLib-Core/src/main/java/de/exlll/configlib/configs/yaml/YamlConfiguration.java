@@ -6,6 +6,7 @@ import de.exlll.configlib.ConfigurationSource;
 import de.exlll.configlib.ConfigurationStoreException;
 import org.yaml.snakeyaml.DumperOptions;
 import org.yaml.snakeyaml.DumperOptions.FlowStyle;
+import org.yaml.snakeyaml.LoaderOptions;
 import org.yaml.snakeyaml.constructor.BaseConstructor;
 import org.yaml.snakeyaml.constructor.Constructor;
 import org.yaml.snakeyaml.representer.Representer;
@@ -120,9 +121,9 @@ public abstract class YamlConfiguration extends Configuration<YamlConfiguration>
             private boolean isSpaceEachComments = true;
             private List<String> prependedComments = Collections.emptyList();
             private List<String> appendedComments = Collections.emptyList();
-            private BaseConstructor constructor = new Constructor();
-            private Representer representer = new Representer();
+            private BaseConstructor constructor = new Constructor(new LoaderOptions());
             private DumperOptions options = new DumperOptions();
+            private Representer representer = new Representer(options);
             private Resolver resolver = new Resolver();
 
             protected Builder() {
