@@ -1,3 +1,5 @@
+**Note: This is a fork from Exlll/ConfigLib v2**
+
 # ConfigLib v2
 
 **A Bukkit and BungeeCord library for storing and loading configurations**
