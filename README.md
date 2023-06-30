@@ -1,6 +1,6 @@
 **Note: This is a fork from Exlll/ConfigLib v2**
 
-# ConfigLib v2
+# ConfigLib v2 ![version][shieldVersion]
 
 **A Bukkit and BungeeCord library for storing and loading configurations**
 
@@ -541,3 +541,5 @@ dependencies {
     compile group: 'de.exlll', name: 'configlib-bungee', version: '2.2.0'
 }
 ```
+
+[shieldVersion]: https://img.shields.io/github/v/release/HappyAreaBean/ConfigLib?style=for-the-badge
