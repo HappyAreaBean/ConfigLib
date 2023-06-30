@@ -1,6 +1,6 @@
 **Note: This is a fork from Exlll/ConfigLib v2**
 
-# ConfigLib v2
+# ConfigLib v2 ![version][shieldVersion]
 
 **A Bukkit and BungeeCord library for storing and loading configurations**
 
@@ -504,40 +504,5 @@ public final class DatabasePlugin extends JavaPlugin {
     }
 }
 ```
-## Import
-#### Maven
-```xml
-<repository>
-    <id>de.exlll</id>
-    <url>http://exlll.de:8081/artifactory/releases/</url>
-</repository>
 
-<!-- for Bukkit plugins -->
-<dependency>
-    <groupId>de.exlll</groupId>
-    <artifactId>configlib-bukkit</artifactId>
-    <version>2.2.0</version>
-</dependency>
-
-<!-- for Bungee plugins -->
-<dependency>
-    <groupId>de.exlll</groupId>
-    <artifactId>configlib-bungee</artifactId>
-    <version>2.2.0</version>
-</dependency>
-```
-#### Gradle
-```groovy
-repositories {
-    maven {
-        url 'http://exlll.de:8081/artifactory/releases/'
-    }
-}
-dependencies {
-    // for Bukkit plugins
-    compile group: 'de.exlll', name: 'configlib-bukkit', version: '2.2.0'
-
-    // for Bungee plugins
-    compile group: 'de.exlll', name: 'configlib-bungee', version: '2.2.0'
-}
-```
+[shieldVersion]: https://img.shields.io/github/v/release/HappyAreaBean/ConfigLib?style=for-the-badge
