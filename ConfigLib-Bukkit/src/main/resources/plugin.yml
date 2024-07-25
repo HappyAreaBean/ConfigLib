@@ -1,5 +1,6 @@
 name: ConfigLib
 author: Exlll
 
-version: 2.2.0
+version: ${version}
 main: de.exlll.configlib.ConfigLib
+api-version: 1.13

@@ -1,6 +1,6 @@
 allprojects {
     group 'de.exlll'
-    version '2.3.0'
+    version '2.3.1-SNAPSHOT'
 }
 subprojects {
     apply plugin: 'java'
@@ -60,6 +60,11 @@ project(':configlib-bukkit') {
         implementation group: 'org.bukkit', name: 'bukkit', version: '1.12.2-R0.1-SNAPSHOT'
     }
     jar { from { project(':configlib-core').sourceSets.main.output } }
+    processResources {
+        filesMatching("plugin.yml") {
+            expand("version": version)
+        }
+    }
 }
 project(':configlib-bungee') {
     repositories { maven { url 'https://oss.sonatype.org/content/repositories/snapshots' } }
