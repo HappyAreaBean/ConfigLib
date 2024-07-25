@@ -26,7 +26,7 @@ Adding the dependency:
 
 ```gradle
     dependencies {
-        implementation "com.github.HappyAreaBean.ConfigLib:configlib-core:2.3.0"
+        implementation "com.github.HappyAreaBean.ConfigLib:configlib-core:2.3.1"
     }
 ```
 
@@ -48,7 +48,7 @@ Adding the dependency:
 <dependency>
     <groupId>com.github.HappyAreaBean.ConfigLib</groupId>
     <artifactId>configlib-core</artifactId>
-    <version>2.3.0</version>
+    <version>2.3.1</version>
 </dependency>
 ```
 
