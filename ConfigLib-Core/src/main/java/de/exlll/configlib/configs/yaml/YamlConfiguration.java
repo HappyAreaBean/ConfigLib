@@ -121,14 +121,25 @@ public abstract class YamlConfiguration extends Configuration<YamlConfiguration>
             private boolean isSpaceEachComments = true;
             private List<String> prependedComments = Collections.emptyList();
             private List<String> appendedComments = Collections.emptyList();
-            private BaseConstructor constructor = new Constructor(new LoaderOptions());
+            private BaseConstructor constructor;
             private DumperOptions options = new DumperOptions();
-            private Representer representer = new Representer(options);
+            private Representer representer;
             private Resolver resolver = new Resolver();
 
             protected Builder() {
                 options.setIndent(2);
                 options.setDefaultFlowStyle(FlowStyle.BLOCK);
+
+                try {
+                    Class<?> constructorClass = Class.forName("org.yaml.snakeyaml.constructor.Constructor");
+                    constructor = (Constructor) constructorClass.newInstance();
+
+                    Class<?> representerClass = Class.forName("org.yaml.snakeyaml.representer.Representer");
+                    representer = (Representer) representerClass.newInstance();
+                } catch (Throwable e) {
+                    constructor = new Constructor(new LoaderOptions());
+                    representer = new Representer(options);
+                }
             }
 
             /**
